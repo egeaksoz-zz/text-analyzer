@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import Table from 'react-bootstrap/Table';
 
 class Result extends React.Component {
     render() {
@@ -7,15 +8,22 @@ class Result extends React.Component {
         const analysis = [];
         result.forEach(res => {
             analysis.push(
-                <p key={res.id}>The word is: {res.word}, count is: {res.count}</p>
+                <tr key={res.id}><td>{res.word}</td><td>{res.count}</td></tr>
             )
         })
 
     return(
-        <div>
-            <p> Here is analysis: </p>
-            <p> {analysis} </p>
-        </div>
+        <Table striped bordered hover variant="dark">
+            <thead>
+                <tr>
+                    <th>Word</th>
+                    <th>Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {analysis}
+            </tbody>
+        </Table>
     )}
 }
 

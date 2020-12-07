@@ -1,6 +1,7 @@
 import React from 'react';
-import { InputGroup, Button, FormControl } from 'react-bootstrap';
+import { InputGroup, Button, FormControl, Container, Row, Col } from 'react-bootstrap';
 import Result from './result';
+import './main.css';
 
 class Main extends React.Component {
     constructor() {
@@ -47,16 +48,25 @@ class Main extends React.Component {
 
     render() {
         return(
-            <div>
-            <InputGroup>
-                <InputGroup.Prepend>
-                    <InputGroup.Text> Enter your text here: </InputGroup.Text>
-                    <FormControl as="textarea" aria-label="analyze-text" value={this.state.text} onChange={e => this.setState({ text: e.target.value})} />
-                </InputGroup.Prepend>
-                <Button type="button" id="analyze" onClick={this.analyze}>Analyze</Button>
-            </InputGroup>
-            { this.state.showResults ? <Result result={this.state.result} /> : null}
-           </div>
+            <Container>
+                <Row className="justify-content-md-center">
+                    <Col md={{ span: 8}}>
+                        <InputGroup className="input">
+                            <InputGroup.Prepend>
+                                <InputGroup.Text> Enter your text here: </InputGroup.Text>
+                                <FormControl as="textarea" className="form" aria-label="analyze-text" value={this.state.text} onChange={e => this.setState({ text: e.target.value})} />
+                            </InputGroup.Prepend>
+                        </InputGroup>
+                        <Button type="button" id="analyze" onClick={this.analyze} variant="dark" block>Analyze</Button>
+                    </Col>
+                </Row>
+                <p></p>
+                <Row>
+                    <Col md={{ span: 4, offset: 4}}>
+                    { this.state.showResults ? <Result result={this.state.result} /> : null}
+                   </Col>
+                </Row>
+           </Container>
         );
     }
 }
