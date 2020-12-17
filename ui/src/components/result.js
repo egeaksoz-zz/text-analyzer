@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 
 class Result extends React.Component {
     render() {
-        let result = this.props.result;
+        const result = this.props.result;
         const analysis = [];
         result.forEach(res => {
             analysis.push(
