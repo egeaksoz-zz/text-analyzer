@@ -7,7 +7,6 @@ import { analyze, result } from '../action';
 class Main extends React.Component {
     constructor() {
         super();
-        //this.analyze = analyze.bind(this);
         this.state = { text: "", result: [], showResults: false }
     }
 
