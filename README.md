@@ -18,4 +18,6 @@ and then start the database, to do that on postgresql folder:
 
 `docker-compose up -d`
 
+This project assumes you have a running instance of kafka ( and zookeeper) on port 9092.
+
 Enjoy!
