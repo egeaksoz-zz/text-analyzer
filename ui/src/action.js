@@ -10,7 +10,6 @@ export const analyze = (text) => {
         .then((res) => {
         })
         .catch((err) => {
-            console.log(err);
         });
 }
 
@@ -23,7 +22,6 @@ export const result = () => {
         })
         .then(resJson => {
             return resJson;
-            //this.setState({ result: resJson, showResults: true });
         })
         .catch((err) => {
             console.log(err);

@@ -37,7 +37,6 @@ class Main extends React.Component {
                         <Button type="button" id="analyze" onClick={() => this.sentToAnalysis()} variant="dark" block>Analyze</Button>
                     </Col>
                 </Row>
-                <p></p>
                 <Row>
                     <Col md={{ span: 4, offset: 4 }}>
                         {this.state.showResults ? <Result result={this.state.result} /> : null}
