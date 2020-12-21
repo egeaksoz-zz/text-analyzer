@@ -21,3 +21,8 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream-kafka" % "2.0.5",
   "com.lightbend.akka" %% "akka-stream-alpakka-slick" % "2.0.2"
 )
+
+assemblyMergeStrategy in assembly := {
+  case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+  case x                             => MergeStrategy.first
+}
